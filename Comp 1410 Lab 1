@@ -1,0 +1,19 @@
+#include<stdio.h>
+#include<assert.h>
+int sum_of_digits(int n){
+    return n/10;
+}
+int digit_sum_iterative(int n) {
+while (n <= 999999999) {
+n = sum_of_digits(n);
+}
+return n;
+}
+int digit_sum_recursive(int n) {
+    if(n==0)
+    return 0;
+    return(n%10+digit_sum_recursive(n/10));
+}
+int main(void) {
+    assert(digit_sum_recursive(2314)==10);
+}
